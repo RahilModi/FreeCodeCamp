@@ -29,7 +29,7 @@ app.get('/:dateVal',(req,res)=>{
     }else{
         res.send({
             unix: dateVal,
-            time: moment(new Date(dateVal*1000)).format("MMMM DD, YYYY")
+            natural: moment(new Date(dateVal*1000)).format("MMMM DD, YYYY")
         });
     }
    
