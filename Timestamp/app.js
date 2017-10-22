@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 
-let app = module.exports = express();
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -27,10 +27,15 @@ app.get('/:dateVal',(req,res)=>{
             });
         }
     }else{
-        res.send({
-            unix: dateVal,
-            natural: moment(new Date(dateVal*1000)).format("MMMM DD, YYYY")
-        });
+        let naturalDate = moment(new Date(dateVal*1000)).format("MMMM DD, YYYY");
+        if (naturalDate == 'Invalid date'){
+            res.send({"Message":'Input Param is invalid UNIX time. Please check..'});
+        }else{
+            res.send({
+                unix: dateVal,
+                natural: naturalDate
+            });
+        }
     }
    
 });
