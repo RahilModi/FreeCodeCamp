@@ -78,14 +78,6 @@ app.get('/latest',(req,res)=>{
     });
 });
 
-var formateResponse = (image)=>{
-    return({
-        imageTitle: image.title,
-        imageLink: image.link,
-        imageType: image.mime,
-    });
-}
-
 app.listen(PORT, () => {
     console.log(`App is running on ${PORT} port`);
 });
