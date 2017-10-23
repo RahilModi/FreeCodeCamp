@@ -6,5 +6,5 @@
 3. I can get a list of the most recently submitted search strings.
 
 Hosted at:  
-https://imagesearchfcamp.herokuapp.com/lolcats%20funny&offset=2
+https://imagesearchfcamp.herokuapp.com/imagesearch/lolcats%20funny&offset=2  
 https://imagesearchfcamp.herokuapp.com/latest/
